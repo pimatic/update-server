@@ -63,7 +63,7 @@ module.exports = {
     return fs.readFileAsync('cache/pluginlist.json').then( (data) =>
       return JSON.parse(data)
     ).catch( (err) ->
-      if(err.code == 'NOENT')
+      if(err.code == 'ENOENT')
         return []
       throw err
     )
